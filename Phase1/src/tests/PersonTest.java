@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import org.junit.Assert;
 import org.junit.Test;
 
-import entities.BloodStatus;
 import entities.Person;
 
 public class PersonTest {
@@ -27,7 +26,7 @@ public class PersonTest {
 	public void getHouseTest() throws ParseException
 	{
 		DateFormat formatter = new SimpleDateFormat("d-MM-yyyy"); 
-		snape = new Person("Severus Snape", "Slytherin", BloodStatus.HalfBlood, "Hogwarts", formatter.parse("9-01-1960"));
+		snape = new Person("Severus Snape", "Slytherin", "half-blood", "Hogwarts", formatter.parse("9-01-1960"));
 		String actual = snape.getHouseName();
 		String expected = "Slytherin";
 		
@@ -37,10 +36,10 @@ public class PersonTest {
 	public void getBloodStatusTest() throws ParseException
 	{
 		DateFormat formatter = new SimpleDateFormat("d-MM-yyyy"); 
-		snape = new Person("Severus Snape", "Slytherin", BloodStatus.HalfBlood, "Hogwarts", formatter.parse("9-01-1960"));
+		snape = new Person("Severus Snape", "Slytherin", "half-blood", "Hogwarts", formatter.parse("9-01-1960"));
 		
-		BloodStatus actual = snape.getBloodStatus();
-		BloodStatus expected = BloodStatus.HalfBlood;
+		String actual = snape.getBloodStatus();
+		String expected = "half-blood";
 		
 		Assert.assertEquals(expected, actual);
 	}
@@ -48,7 +47,7 @@ public class PersonTest {
 	public void getSchoolTest() throws ParseException
 	{
 		DateFormat formatter = new SimpleDateFormat("d-MM-yyyy"); 
-		snape = new Person("Severus Snape", "Slytherin", BloodStatus.HalfBlood, "Hogwarts", formatter.parse("9-01-1960"));		
+		snape = new Person("Severus Snape", "Slytherin", "half-blood", "Hogwarts", formatter.parse("9-01-1960"));		
 		String actual = snape.getSchool();
 		String expected = "Hogwarts";
 		
@@ -78,9 +77,9 @@ public class PersonTest {
 	public void setBloodStatusTest()
 	{
 		snape = new Person("Severus Snape");
-		snape.setBloodStatus(BloodStatus.HalfBlood);
-		BloodStatus actual = snape.getBloodStatus();
-		BloodStatus expected = BloodStatus.HalfBlood;
+		snape.setBloodStatus("Half-Blood");
+		String actual = snape.getBloodStatus();
+		String expected = "Half-Blood";
 		
 		Assert.assertEquals(expected, actual);
 	}
