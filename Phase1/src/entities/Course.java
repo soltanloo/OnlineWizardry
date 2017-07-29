@@ -12,6 +12,7 @@ public class Course {
 	
 	public Course(String name) {
 		_name = name;
+		_professorName = "";
 		_studentNames = new Vector<String>();
 		_numOfStudents = 0;
 	}
@@ -21,6 +22,7 @@ public class Course {
 		_minGrade = minGrade;
 		_year = year;
 		_numOfStudents = 0;
+		_studentNames = new Vector<String>();
 	}
 	public Vector<String> getStudentNames() {
 		return _studentNames;

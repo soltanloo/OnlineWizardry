@@ -5,14 +5,16 @@ import java.util.Date;
 public class Person {
 	private String _name;
 	private String _houseName;
-	private String _bloodStatus;
+	private BloodStatus _bloodStatus;
 	private String _school;
 	private Date _birthday;
 	
 	public Person(String name) {
 		_name = name;
+		_houseName = "";
+		_school = "";
 	}
-	public Person(String name, String houseName, String bloodStatus, String school, Date birthday) {
+	public Person(String name, String houseName, BloodStatus bloodStatus, String school, Date birthday) {
 		_name = name;
 		_houseName = houseName;
 		_bloodStatus = bloodStatus;
@@ -31,10 +33,10 @@ public class Person {
 	public void setHouseName(String houseName) {
 		_houseName = houseName;
 	}
-	public String getBloodStatus() {
+	public BloodStatus getBloodStatus() {
 		return _bloodStatus;
 	}
-	public void setBloodStatus(String bloodStatus) {
+	public void setBloodStatus(BloodStatus bloodStatus) {
 		_bloodStatus = bloodStatus;
 	}
 	public String getSchool() {
