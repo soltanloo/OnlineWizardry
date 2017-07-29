@@ -1,0 +1,30 @@
+*
+Name Harry Potter
+School Hogwarts
+House Gryffindor
+Blood Pure
+Birthday 31/07/1997
+*
+Name Ronald Weasley
+School Hogwarts
+House Gryffindor
+Blood Pure
+Birthday 01/03/1980
+*
+Name Dean Thomas
+School Hogwarts
+House Gryffindor
+Blood Half
+Birthday unknown
+*
+Name Hermione Granger
+School Hogwarts
+House Gryffindor
+Blood Muggle
+Birthday 19/10/1979
+*
+Name Parvati Patil
+School Hogwarts
+House Gryffindor
+Blood Pure
+Birthday unknown

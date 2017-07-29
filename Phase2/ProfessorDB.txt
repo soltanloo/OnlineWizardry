@@ -1,0 +1,21 @@
+Severus Snape
+Potions
+1995
+*
+Minerva McGonagall
+Transfiguration
+1994
+*
+Filius Flitwick
+Charms
+1980
+*
+Aurora Sinistra
+Astronomy
+1992
+*
+Rolanda Hooch
+Flying
+1992
+*
+$
