@@ -93,6 +93,12 @@ public class School {
 	public void setName(String name) {
 		_name = name;
 	}
+	public String getLocation() {
+		return _location;
+	}
+	public void setLocation(String location) {
+		_location = location;
+	}
 	public int getNumOfStudents() {
 		return _numOfStudents;
 	}
