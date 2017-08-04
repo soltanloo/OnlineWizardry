@@ -4,38 +4,38 @@ import java.util.Vector;
 
 public class Course {
 	private String _name;
-	private char _minGrade;
-	private String _professorName;
+	private Grades _minGrade;
+	private Professor _professor;
 	private int _year;
 	private int _numOfStudents;
-	private Vector<String> _studentNames;
+	private Vector<Student> _students;
 	
 	public Course(String name) {
 		_name = name;
-		_professorName = "";
-		_studentNames = new Vector<String>();
+		_professor = new Professor("");
+		_students = new Vector<Student>();
 		_numOfStudents = 0;
 	}
-	public Course(String name, String professorName, char minGrade, int year) {
+	public Course(String name, Professor professor, Grades minGrade, int year) {
 		_name = name;
-		_professorName = professorName;
+		_professor = professor;
 		_minGrade = minGrade;
 		_year = year;
 		_numOfStudents = 0;
-		_studentNames = new Vector<String>();
+		_students = new Vector<Student>();
 	}
-	public Vector<String> getStudentNames() {
-		return _studentNames;
+	public Vector<Student> getStudents() {
+		return _students;
 	}
-	public void setStudentNames(Vector<String> studentNames) {
-		_studentNames = studentNames;
-		_numOfStudents = studentNames.size();
+	public void setStudents(Vector<Student> students) {
+		_students = students;
+		_numOfStudents = students.size();
 	}
-	public String getProfessorName() {
-		return _professorName;
+	public Professor getProfessor() {
+		return _professor;
 	}
-	public void setProfessorName(String professorName) {
-		_professorName = professorName;
+	public void setProfessor(Professor professor) {
+		_professor = professor;
 	}
 	public String getName() {
 		return _name;
@@ -43,10 +43,10 @@ public class Course {
 	public void setName(String name) {
 		_name = name;
 	}
-	public char getMinGrade() {
+	public Grades getMinGrade() {
 		return _minGrade;
 	}
-	public void setMinGrade(char minGrade) {
+	public void setMinGrade(Grades minGrade) {
 		_minGrade = minGrade;
 	}
 	public int getYear() {
@@ -55,9 +55,9 @@ public class Course {
 	public void setYear(int year) {
 		_year = year;
 	}
-	public void addStudent(String studentName) {
-		if (!_studentNames.contains(studentName)) {
-			_studentNames.add(studentName);
+	public void addStudent(Student student) {
+		if (!_students.contains(student)) {
+			_students.add(student);
 			_numOfStudents++;
 		}
 	}

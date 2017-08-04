@@ -8,5 +8,8 @@ public class FinishedCourse extends Course {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-
+	public FinishedCourse(String name, String professorName, char minGrade, int year) {
+		super(name, professorName, minGrade, year);
+		// TODO Auto-generated constructor stub
+	}
 }

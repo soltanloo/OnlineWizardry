@@ -6,6 +6,7 @@ import java.util.Vector;
 import org.junit.Assert;
 import org.junit.Test;
 
+import entities.Course;
 import entities.School;
 
 public class SchoolTest {
@@ -23,21 +24,21 @@ public class SchoolTest {
 	@Test
 	public void getCoursesTest()
 	{
-		ArrayList<String> courses = new ArrayList<String>();
-		courses.add("Potions");
-		courses.add("Divination");
-		courses.add("Magical Creatures");
-		courses.add("Defense Against The Dark Arts");
-		courses.add("Transfiguration");
-		courses.add("Charms");
-		courses.add("Astronomy");
-		courses.add("Flying");
-		courses.add("Herbology");
-		courses.add("History of Magic");
+		ArrayList<Course> courses = new ArrayList<Course>();
+		courses.add(new Course("Potions"));
+		courses.add(new Course("Divination"));
+		courses.add(new Course("Magical Creatures"));
+		courses.add(new Course("Defense Against The Dark Arts"));
+		courses.add(new Course("Transfiguration"));
+		courses.add(new Course("Charms"));
+		courses.add(new Course("Astronomy"));
+		courses.add(new Course("Flying"));
+		courses.add(new Course("Herbology"));
+		courses.add(new Course("History of Magic"));
 
-		hogwarts = new School("Hogwarts", null, courses, null, null, null);
-		ArrayList<String> actual = hogwarts.getCourseNames();
-		ArrayList<String> expected = courses;
+		hogwarts = new School("Hogwarts", null, courses, null, null, "");
+		ArrayList<Course> actual = hogwarts.getCourses();
+		ArrayList<Course> expected = courses;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 	@Test
