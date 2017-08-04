@@ -66,4 +66,17 @@ public class House {
 	public void setPrefects(Map<Integer, Student> prefects) {
 		_prefects = prefects;
 	}
+	public void addStudent(Student student) {
+		if (!_students.contains(student)) {
+			_students.add(student);
+		}
+	}
+	public void addQuality(String quality) {
+		if (!_qualities.contains(quality)) {
+			_qualities.add(quality);
+		}
+	}
+	public void addPrefect(Integer year, Student student) {
+		_prefects.put(year, student);
+	}
 }
