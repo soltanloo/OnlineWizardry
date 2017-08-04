@@ -18,4 +18,19 @@ public class Professor extends Person {
 		_notes = notes;
 		_courses = courses;
 	}
+	public Map<Integer, Course> getCourses() {
+		return _courses;
+	}
+	public void setCourses(Map<Integer, Course> courses) {
+		_courses = courses;
+	}
+	public void addCourse(Integer year, Course course) {
+		_courses.put(year, course);
+	}
+	public String getNotes() {
+		return _notes;
+	}
+	public void setNotes(String _notes) {
+		this._notes = _notes;
+	}
 }

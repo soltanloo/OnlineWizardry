@@ -6,10 +6,28 @@ public class FinishedCourse extends Course {
 	
 	public FinishedCourse(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		_passed = false;
 	}
-	public FinishedCourse(String name, String professorName, char minGrade, int year) {
-		super(name, professorName, minGrade, year);
-		// TODO Auto-generated constructor stub
+	public FinishedCourse(String name, Professor professor, Grades minGrade, int year, Grades grade) {
+		super(name, professor, minGrade, year);
+		_grade = grade;
+		if (grade == Grades.A || grade == Grades.E || grade ==Grades.O) {
+			_passed = true;
+		}
+		else {
+			_passed = false;
+		}
+	}
+	public boolean isPassed() {
+		return _passed;
+	}
+	public void setPassed(boolean passed) {
+		_passed = passed;
+	}
+	public Grades getGrade() {
+		return _grade;
+	}
+	public void setGrade(Grades grade) {
+		_grade = grade;
 	}
 }
