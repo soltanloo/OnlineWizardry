@@ -1,23 +1,21 @@
 package entities;
 
-import java.util.Date;
-
 public class Person {
 	private String _name;
-	private String _houseName;
-	private String _bloodStatus;
-	private String _school;
-	private Date _birthday;
+	private House _house;
+	private BloodStatus _bloodStatus;
+	private School _school;
+	private String _birthday;
 	
 	public Person(String name) {
 		_name = name;
-		_houseName = "";
-		_school = "";
-		_bloodStatus = "";
+		_house = new House("");
+		_school = new School("");
+		_birthday = "";
 	}
-	public Person(String name, String houseName, String bloodStatus, String school, Date birthday) {
+	public Person(String name, House house, BloodStatus bloodStatus, School school, String birthday) {
 		_name = name;
-		_houseName = houseName;
+		_house = house;
 		_bloodStatus = bloodStatus;
 		_school = school;
 		_birthday = birthday;
@@ -28,25 +26,25 @@ public class Person {
 	public void setName(String name) {
 		_name = name;
 	}
-	public String getHouseName() {
-		return _houseName;
+	public House getHouse() {
+		return _house;
 	}
-	public void setHouseName(String houseName) {
-		_houseName = houseName;
+	public void setHouse(House house) {
+		_house = house;
 	}
-	public String getBloodStatus() {
+	public BloodStatus getBloodStatus() {
 		return _bloodStatus;
 	}
-	public void setBloodStatus(String bloodStatus) {
+	public void setBloodStatus(BloodStatus bloodStatus) {
 		_bloodStatus = bloodStatus;
 	}
-	public String getSchool() {
+	public School getSchool() {
 		return _school;
 	}
-	public void setSchool(String school) {
+	public void setSchool(School school) {
 		_school = school;
 	}
-	public Date getBirthday() {
+	public String getBirthday() {
 		return _birthday;
 	}
 }

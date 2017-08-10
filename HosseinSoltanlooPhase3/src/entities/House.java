@@ -15,9 +15,8 @@ public class House {
 	
 	public House(String name) {
 		_name = name;
-		_school = new School("");
 		_students = new Vector<Student>();
-		_headTeacher = new Professor("");
+		_school = new School("");
 		_qualities = new ArrayList<String>();
 		_prefects = new HashMap<Integer, Student>();
 	}

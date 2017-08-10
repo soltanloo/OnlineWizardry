@@ -7,7 +7,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import entities.Course;
+import entities.House;
+import entities.Professor;
 import entities.School;
+import entities.Student;
 
 public class SchoolTest {
 
@@ -44,111 +47,138 @@ public class SchoolTest {
 	@Test
 	public void getHousesTest()
 	{
-		ArrayList<String> houses = new ArrayList<String>();
-		houses.add("Gryffindor");
-		houses.add("Hufflepuff");
-		houses.add("Ravenclaw");
-		houses.add("Slytherin");
-		hogwarts = new School("Hogwarts", houses, null, null, null, null);
-		ArrayList<String> actual = hogwarts.getHouseNames();
-		ArrayList<String> expected = houses;
+		ArrayList<House> houses = new ArrayList<House>();
+		houses.add(new House("Gryffindor"));
+		houses.add(new House("Hufflepuff"));
+		houses.add(new House("Ravenclaw"));
+		houses.add(new House("Slytherin"));
+		hogwarts = new School("Hogwarts", houses, null, null, null, "");
+		ArrayList<House> actual = hogwarts.getHouses();
+		ArrayList<House> expected = houses;
 		Assert.assertEquals(expected, actual);
 				
 	}
 	@Test
 	public void getStudentsTest()
 	{
-		Vector<String> students = new Vector<String>();
-		students.add("Harry Potter");
-		students.add("Luna Lovegood");
-		students.add("Lucius Malfoy");
-		hogwarts = new School("Hogwarts", null, null, null, students, null);
+		Vector<Student> students = new Vector<Student>();
+		students.add(new Student("Harry Potter"));
+		students.add(new Student("Luna Lovegood"));
+		students.add(new Student("Lucius Malfoy"));
+		hogwarts = new School("Hogwarts", null, null, students, null, "");
 		
-		Vector<String> actual = hogwarts.getStudentNames();
-		Vector<String> expected = students;
+		Vector<Student> actual = hogwarts.getStudents();
+		Vector<Student> expected = students;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());		
 	}
 	@Test
 	public void getProfessorsTest()
 	{
-		/*public School(String name, ArrayList<String> houses, ArrayList<String> course#s,
-		ArrayList<Integer> years, Vector<String> students, Vector<String> professors)*/
-		Vector<String> professors = new Vector<String>();
-		professors.add("Severus Snape");
-		professors.add("Albus Dumbledore");
-		professors.add("Minerva McGonnagol");
-		hogwarts = new School("Hogwarts", null, null, null, null, professors);
+		Vector<Professor> professors = new Vector<Professor>();
+		professors.add(new Professor("Severus Snape"));
+		professors.add(new Professor("Albus Dumbledore"));
+		professors.add(new Professor("Minerva McGonnagol"));
+		hogwarts = new School("Hogwarts", null, null, null, professors, null);
 		
-		Vector<String> actual = hogwarts.getProfessorNames();
-		Vector<String> expected = professors;
+		Vector<Professor> actual = hogwarts.getProfessors();
+		Vector<Professor> expected = professors;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 
+	}
+	
+	@Test
+	public void getLocationTest() {
+		hogwarts = new School("Hogwarts", null, null, null, null, "Test Location");
+		
+		String actual = hogwarts.getLocation();
+		String expected = "Test Location";
+		Assert.assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void setNameTest() {
+		hogwarts = new School("Hogwarts");
+		hogwarts.setName("Not Hogwarts");
+		
+		String actual = hogwarts.getName();
+		String expected = "Not Hogwarts";
+		Assert.assertEquals(expected, actual);
 	}
 
 	@Test
 	public void setCoursesTest()
 	{
-		ArrayList<String> courses = new ArrayList<String>();
-		courses.add("Potions");
-		courses.add("Divination");
-		courses.add("Magical Creatures");
-		courses.add("Defense Against The Dark Arts");
-		courses.add("Transfiguration");
-		courses.add("Charms");
-		courses.add("Astronomy");
-		courses.add("Flying");
-		courses.add("Herbology");
-		courses.add("History of Magic");
+		ArrayList<Course> courses = new ArrayList<Course>();
+		courses.add(new Course("Potions"));
+		courses.add(new Course("Divination"));
+		courses.add(new Course("Magical Creatures"));
+		courses.add(new Course("Defense Against The Dark Arts"));
+		courses.add(new Course("Transfiguration"));
+		courses.add(new Course("Charms"));
+		courses.add(new Course("Astronomy"));
+		courses.add(new Course("Flying"));
+		courses.add(new Course("Herbology"));
+		courses.add(new Course("History of Magic"));
 
 		hogwarts = new School("Hogwarts");
-		hogwarts.setCourseNames(courses);
-		ArrayList<String> actual = hogwarts.getCourseNames();
-		ArrayList<String> expected = courses;
+		hogwarts.setCourses(courses);
+		ArrayList<Course> actual = hogwarts.getCourses();
+		ArrayList<Course> expected = courses;
 		Assert.assertEquals(expected, actual);
 	}
 	@Test
 	public void setHousesTest()
 	{
-		ArrayList<String> houses = new ArrayList<String>();
-		houses.add("Gryffindor");
-		houses.add("Hufflepuff");
-		houses.add("Ravenclaw");
-		houses.add("Slytherin");
+		ArrayList<House> houses = new ArrayList<House>();
+		houses.add(new House("Gryffindor"));
+		houses.add(new House("Hufflepuff"));
+		houses.add(new House("Ravenclaw"));
+		houses.add(new House("Slytherin"));
 		hogwarts = new School("Hogwarts");
-		hogwarts.setHouseNames(houses);
-		ArrayList<String> actual = hogwarts.getHouseNames();
-		ArrayList<String> expected = houses;
+		hogwarts.setHouses(houses);
+		ArrayList<House> actual = hogwarts.getHouses();
+		ArrayList<House> expected = houses;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 				
 	}
 	@Test
 	public void setStudentsTest()
 	{
-		Vector<String> students = new Vector<String>();
-		students.add("Harry Potter");
-		students.add("Luna Lovegood");
-		students.add("Lucius Malfoy");
+		Vector<Student> students = new Vector<Student>();
+		students.add(new Student("Harry Potter"));
+		students.add(new Student("Luna Lovegood"));
+		students.add(new Student("Lucius Malfoy"));
 		hogwarts = new School("Hogwarts");
-		hogwarts.setStudentNames(students);
-		Vector<String> actual = hogwarts.getStudentNames();
-		Vector<String> expected = students;
+		hogwarts.setStudents(students);
+		Vector<Student> actual = hogwarts.getStudents();
+		Vector<Student> expected = students;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 		
 	}
 	@Test
 	public void setProfessorsTest()
 	{
-		Vector<String> professors = new Vector<String>();
-		professors.add("Severus Snape");
-		professors.add("Albus Dumbledore");
-		professors.add("Minerva McGonnagol");
+		Vector<Professor> professors = new Vector<Professor>();
+		professors.add(new Professor("Severus Snape"));
+		professors.add(new Professor("Albus Dumbledore"));
+		professors.add(new Professor("Minerva McGonnagol"));
 		hogwarts = new School("Hogwarts");
-		hogwarts.setProfessorNames(professors);
+		hogwarts.setProfessors(professors);
 		
-		Vector<String> actual = hogwarts.getProfessorNames();
-		Vector<String> expected = professors;
+		Vector<Professor> actual = hogwarts.getProfessors();
+		Vector<Professor> expected = professors;
 		Assert.assertArrayEquals(expected.toArray(), actual.toArray());
 
+	}
+	
+	@Test
+	public void setLocationTest() {
+		hogwarts = new School("Hogwarts");
+		hogwarts.setLocation("Test Location");
+		
+		String actual = hogwarts.getLocation();
+		String expected = "Test Location";
+		Assert.assertEquals(expected, actual);
 	}
 
 }

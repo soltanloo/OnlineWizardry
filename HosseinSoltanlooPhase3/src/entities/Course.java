@@ -12,7 +12,6 @@ public class Course {
 	
 	public Course(String name) {
 		_name = name;
-		_professor = new Professor("");
 		_students = new Vector<Student>();
 		_numOfStudents = 0;
 	}
