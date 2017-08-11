@@ -29,7 +29,7 @@ public class Professor extends Person {
 	public String getNotes() {
 		return _notes;
 	}
-	public void setNotes(String _notes) {
-		this._notes = _notes;
+	public void setNotes(String notes) {
+		_notes = notes;
 	}
 }
