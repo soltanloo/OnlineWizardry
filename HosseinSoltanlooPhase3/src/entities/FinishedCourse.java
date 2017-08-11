@@ -29,5 +29,11 @@ public class FinishedCourse extends Course {
 	}
 	public void setGrade(Grades grade) {
 		_grade = grade;
+		if (grade == Grades.A || grade == Grades.E || grade ==Grades.O) {
+			_passed = true;
+		}
+		else {
+			_passed = false;
+		}
 	}
 }
