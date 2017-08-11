@@ -76,4 +76,24 @@ public class CourseTest {
 		Assert.assertEquals(expected, actual);
 		
 	}
+	
+	@Test
+	public void yearTest() {
+		flying = new Course("Flying");
+		flying.setYear(1995);
+		
+		int actual = flying.getYear();
+		int expected = 1995;
+		Assert.assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void setMinGradeTest() {
+		flying = new Course("Flying");
+		flying.setMinGrade(Grades.O);
+		
+		Grades actual = flying.getMinGrade();
+		Grades expected = Grades.O;
+		Assert.assertEquals(expected, actual);
+	}
 }
