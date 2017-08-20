@@ -15,9 +15,12 @@ public class CourseService {
 	private Vector<Course> _allCourses;
 	
 	/*			CONSTRUCTORS			*/
-	public CourseService(Course course) {
+	public CourseService(Course course, Vector<Course> allCourses) {
 		_course = course;
-		_allCourses = new Vector<Course>();
+		_allCourses = allCourses;
+	}
+	public CourseService(Course course) {
+		this(course, new Vector<Course>());
 	}
 	public CourseService() {
 		this(null);
@@ -33,27 +36,7 @@ public class CourseService {
 	    			continue;
 	    		}
 	    		String name = line;
-	    		String minGradeChar = br.readLine();
-	    		Grades minGrade = null;
-	    		switch (minGradeChar) {
-				case "O":
-					minGrade = Grades.O;
-					break;
-				case "E":
-					minGrade = Grades.E;
-					break;
-				case "A":
-					minGrade = Grades.A;
-					break;
-				case "P":
-					minGrade = Grades.P;
-					break;
-				case "T":
-					minGrade = Grades.T;
-					break;
-				default:
-					break;
-			}
+	    		Grades minGrade = Grades.valueOf(br.readLine());
 	    		Professor professor = new Professor(br.readLine());
 	    		int year = Integer.valueOf(br.readLine());
 	    		Vector<Student> students = new Vector<Student>();
@@ -79,30 +62,8 @@ public class CourseService {
 			Vector<Student> students = course.getStudents();
 			bw.write(name);
 			bw.newLine();
-			switch (minGrade) {
-				case O:
-					bw.write("O");
-					bw.newLine();
-					break;
-				case E:
-					bw.write("E");
-					bw.newLine();
-					break;
-				case A:
-					bw.write("A");
-					bw.newLine();
-					break;
-				case P:
-					bw.write("P");
-					bw.newLine();
-					break;
-				case T:
-					bw.write("T");
-					bw.newLine();
-					break;
-				default:
-					break;
-			}
+			bw.write(minGrade.name());
+			bw.newLine();
 			bw.write(professor.getName());
 			bw.newLine();
 			bw.write(String.valueOf(year));

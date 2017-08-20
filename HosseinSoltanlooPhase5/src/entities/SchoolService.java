@@ -16,9 +16,12 @@ public class SchoolService {
 	private Vector<School> _allSchools;
 	
 	/*			CONSTRUCTORS			*/
-	public SchoolService(School school) {
+	public SchoolService(School school, Vector<School> allSchools) {
 		_school = school;
-		_allSchools = new Vector<School>();
+		_allSchools = allSchools;
+	}
+	public SchoolService(School school) {
+		this(school, new Vector<School>());
 	}
 	public SchoolService() {
 		this(null);
