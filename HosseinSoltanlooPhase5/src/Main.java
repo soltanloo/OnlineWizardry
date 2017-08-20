@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 import entities.CourseService;
+import entities.HouseService;
 import entities.SchoolService;
 import entities.StudentService;
 import entityTests.*;
@@ -54,9 +55,9 @@ public class Main {
 				);
 		ptest.runTests();
 		//////////*~~~~~ END OF PERSON TESTS		
-		StudentService ss = new StudentService();
-		ss.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/StudentDB.txt");
-		ss.setData();
+		HouseService hs = new HouseService();
+		hs.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/HouseDB.txt");
+		hs.setData();
 	}
 	
 
