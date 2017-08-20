@@ -54,6 +54,7 @@ public class Main {
 		//////////*~~~~~ END OF PERSON TESTS		
 		SchoolService ss = new SchoolService();
 		ss.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/SchoolDB.txt");
+		ss.setData();
 	}
 	
 

@@ -1,11 +1,17 @@
 package entities;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -67,8 +73,50 @@ public class SchoolService {
 	    }
 	    br.close();
 	}
-	public void setData() {
-		
+	public void setData() throws IOException {
+		BufferedWriter bw = new BufferedWriter(new FileWriter(
+				"/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/SchoolDB.txt"));
+		for (int i = 0; i < _allSchools.size(); i++) {
+			School school = _allSchools.get(i);
+			String name = school.getName();
+			ArrayList<House> houses = school.getHouses();
+			Vector<Student> students = school.getStudents();
+			Vector<Professor> professors = school.getProfessors();
+			ArrayList<Course> courses = school.getCourses();
+			String location = school.getLocation();
+			bw.write(name);
+			bw.newLine();
+			bw.write(String.valueOf(houses.size()));
+			bw.newLine();
+			for (int j = 0; j < houses.size(); j++) {
+				bw.write(houses.get(j).getName());
+				bw.newLine();
+			}
+			bw.write(String.valueOf(students.size()));
+			bw.newLine();
+			for (int j = 0; j < students.size(); j++) {
+				bw.write(students.get(j).getName());
+				bw.newLine();
+			}
+			bw.write(String.valueOf(professors.size()));
+			bw.newLine();
+			for (int j = 0; j < professors.size(); j++) {
+				bw.write(professors.get(j).getName());
+				bw.newLine();
+			}
+			bw.write(String.valueOf(courses.size()));
+			bw.newLine();
+			for (int j = 0; j < courses.size(); j++) {
+				bw.write(courses.get(j).getName());
+				bw.newLine();
+			}
+			bw.write(location);
+			bw.newLine();
+			bw.write("*");
+			bw.newLine();
+		}
+		bw.write("$");
+		bw.close();
 	}
 	public Vector<School> getAllSchools() {
 		return _allSchools;
