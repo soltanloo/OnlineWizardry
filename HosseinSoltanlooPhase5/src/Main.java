@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import entities.CourseService;
 import entities.SchoolService;
 import entityTests.*;
 
@@ -52,9 +53,9 @@ public class Main {
 				);
 		ptest.runTests();
 		//////////*~~~~~ END OF PERSON TESTS		
-		SchoolService ss = new SchoolService();
-		ss.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/SchoolDB.txt");
-		ss.setData();
+		CourseService cs = new CourseService();
+		cs.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/CourseDB.txt");
+		cs.setData();
 	}
 	
 

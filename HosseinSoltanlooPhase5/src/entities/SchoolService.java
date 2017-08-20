@@ -3,15 +3,10 @@ package entities;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -20,7 +15,7 @@ public class SchoolService {
 	private School _school;
 	private Vector<School> _allSchools;
 	
-	// Constructors
+	/*			CONSTRUCTORS			*/
 	public SchoolService(School school) {
 		_school = school;
 		_allSchools = new Vector<School>();
@@ -28,6 +23,7 @@ public class SchoolService {
 	public SchoolService() {
 		this(null);
 	}
+	/*			HELPER FUNCTIONS			*/
 //	public House sortingHat(Student student) {
 //		
 //	}
@@ -118,16 +114,18 @@ public class SchoolService {
 		bw.write("$");
 		bw.close();
 	}
-	public Vector<School> getAllSchools() {
-		return _allSchools;
-	}
+	/*				SETTERS				*/
 	public void setAllSchools(Vector<School> allSchools) {
 		_allSchools = allSchools;
 	}
-	public School getSchool() {
-		return _school;
-	}
 	public void setSchool(School school) {
 		_school = school;
+	}
+	/*				GETTERS				*/
+	public Vector<School> getAllSchools() {
+		return _allSchools;
+	}
+	public School getSchool() {
+		return _school;
 	}
 }
