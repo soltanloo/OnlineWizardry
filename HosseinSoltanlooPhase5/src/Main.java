@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 import entities.CourseService;
@@ -56,10 +58,7 @@ public class Main {
 				"**************************** PERSON TEST ***************************************"
 				);
 		ptest.runTests();
-		//////////*~~~~~ END OF PERSON TESTS		
-		ProfessorService ps = new ProfessorService();
-		ps.getData("/Users/Soli/Git/OnlineWizardry/HosseinSoltanlooPhase5/src/Database/ProfessorDB.txt");
-		ps.setData();
+		//////////*~~~~~ END OF PERSON TESTS	
 	}
 	
 
